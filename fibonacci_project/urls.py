@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from fibonacci_app import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.fibonacci_sequence, name='fibonacci_sequence'),
+    path('fibonacci/', views.fibonacci_sequence, name='fibonacci_list'),
 ]
